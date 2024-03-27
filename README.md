@@ -1,4 +1,5 @@
 # 03-linkers-lab
+This is HW for "RISC-V toolchain" course.
 
 ## Task 3.1
 
