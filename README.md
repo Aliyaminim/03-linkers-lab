@@ -29,7 +29,10 @@ Finally, in binary file "fact" all calls are resolved, displacements are filled.
 Create my own static library for RISC-V and link to it.
 ```bash
 make CC=${SC_GCC_PATH}/bin/riscv64-unknown-linux-gnu-gcc AR=${SC_GCC_PATH}/bin/riscv64-unknown-linux-gnu-ar QEMU_USER=${SC_QEMU_PATH}/qemu-riscv64 program_static_lib run-qemu -s
-
+```
+```bash
+wc -c ./bin/program.elf 
+8736 ./bin/program.elf
 ```
 
 ```bash
@@ -41,6 +44,12 @@ Create my own dynamic library for RISC-V and link to it.
 ```bash
 make CC=${SC_GCC_PATH}/bin/riscv64-unknown-linux-gnu-gcc QEMU_USER=${SC_QEMU_PATH}/qemu-riscv64 program_dynamic_lib run-qemu -s
 ```
+I noticed that executable file linked with dynamic library is smaller in size.
+```bash
+wc -c ./bin/program.elf 
+8520 ./bin/program.elf
+```
+
 ```bash
 make clean
 ```
